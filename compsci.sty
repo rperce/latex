@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{compsci}[2014/02/11 Computer Science Commands]
+
+\RequirePackage{dejavu}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+
+\definecolor{darkgreen}{HTML}{033500}
+\lstset{
+    breaklines      = true,
+    basicstyle      = \small\ttfamily,
+    keywordstyle    = {[2]\color{darkgreen}},
+    columns         = fixed,
+    showstringspaces= false,
+    breaklines      = true,
+    prebreak        = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    showtabs        = false,
+    showspaces      = false,
+}
+
+\lstdefinelanguage{y86}{
+    morekeywords={halt, nop, rrmovl, irmovl, rmmovl, mrmovl, addl, subl, andl,
+        xorl, jmp, jne, jge, jg, jle, jl, je, cmovle, cmovl, cmove, cmovne,
+    cmovge, cmovg, call, ret, pushl, popl},
+    morekeywords=[2]{eax, ebx, ecx, edx, esi, edi, esp, ebp},
+    sensitive=false,
+%    morecomment=[1]{#},
+}
+
+\definecolor{lgray}{gray}{0.95}
+
+\newcommand{\cd}[1]{\lstinline§#1§}
+\newcommand{\reg}[1]{\lstinline/\%#1/}
+\newcommand{\ign}[1]{}

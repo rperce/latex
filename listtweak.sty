@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{listtweak}[2014/02/11 Short List Commands]
+
+\RequirePackage{enumerate}
+
+\newcommand{\ul}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\ol}[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand{\dl}[1]{\begin{description}#1\end{description}}
+
+\makeatletter
+
+\def\li{\@ifnextchar[{\@liwith}{\@liwitho}}
+\def\@liwith[#1]#2{\item[#1]\textbf{#2}}
+\def\@liwitho#1{\item\textbf{#1}}
+
+\makeatother

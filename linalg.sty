@@ -1,0 +1,38 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{linalg}[2014/02/11 Linear Algebra Commands]
+
+\RequirePackage{mathtools}
+\RequirePackage{arydshln}
+\RequirePackage{amssymb}
+
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Row}{Row}
+
+\newcommand{\augmat}[3][1]{
+    \left[\begin{array}{*{#2}{r}:*{#1}{r}}#3\end{array}\right]
+}
+
+\newcommand{\bvec}[1]{\mathbf{#1}}
+\newcommand{\vhat}[1]{\boldsymbol{\hat{\bvec{#1}}}}
+\newcommand{\sfrac}[2]{{}^{#1}\!/_{#2}}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\vnorm}[1]{\lVert\bvec{#1}\rVert}
+\newcommand{\sproj}[2]{\frac{\bvec{#1}\cdot\bvec{#2}}{\bvec{#2}\cdot\bvec{#2}}}
+\newcommand{\proj}[2]{\sproj{#1}{#2}\bvec{#2}}
+
+\makeatletter
+\def\by{\@ifnextchar[{\@bywith}{\@bywitho}}
+\def\@bywith[#1]#2{#1\times #2}
+\def\@bywitho#1{#1\times #1}
+
+\def\bmat{\@ifnextchar[{\@bmatwith}{\@bmatwitho}}
+\def\@bmatwith[#1]#2{\begin{bmatrix*}[#1]#2\end{bmatrix*}}
+\def\@bmatwitho#1{\begin{bmatrix*}[r]#1\end{bmatrix*}}
+
+\def\pmat{\@ifnextchar[{\@pmatwith}{\@pmatwitho}}
+\def\@pmatwith[#1]#2{\begin{pmatrix*}[#1]#2\end{pmatrix*}}
+\def\@pmatwitho#1{\begin{pmatrix*}[r]#1\end{pmatrix*}}
+\makeatother
