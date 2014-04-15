@@ -15,6 +15,7 @@
 }
 
 \newcommand{\bvec}[1]{\mathbf{#1}}
+\newcommand{\uvec}[1]{\bvec{u}_{#1}}
 \newcommand{\vhat}[1]{\boldsymbol{\hat{\bvec{#1}}}}
 \newcommand{\sfrac}[2]{{}^{#1}\!/_{#2}}
 \newcommand{\R}[1]{\mathbb{R}^{#1}}
@@ -22,6 +23,7 @@
 \newcommand{\vnorm}[1]{\lVert\bvec{#1}\rVert}
 \newcommand{\sproj}[2]{\frac{\bvec{#1}\cdot\bvec{#2}}{\bvec{#2}\cdot\bvec{#2}}}
 \newcommand{\proj}[2]{\sproj{#1}{#2}\bvec{#2}}
+\newcommand{\vdotp}[2]{\bvec{#1}\cdot\bvec{#2}}
 
 \makeatletter
 \def\by{\@ifnextchar[{\@bywith}{\@bywitho}}
