@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{assignment}[2014/02/11 A fancyhdr article for
+\ProvidesClass{homework}[2014/02/11 A fancyhdr article for
 coursework]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -9,6 +9,7 @@ coursework]
 \LoadClass{article}
 \RequirePackage{fancyhdr}
 \RequirePackage{fullpage}
+\RequirePackage{enumitem}
 
 \setlength{\headsep}{0.5cm}
 \setlength{\topmargin}{-1.25cm}
@@ -34,5 +35,9 @@ coursework]
         \fancyhead[R]{\varname\\\varcourse\\\varteacher}
     }
 }
+
+\newenvironment{problems}[1][\arabic*.]
+{\begin{enumerate}[label={#1}, leftmargin=*, format={\textbf}]}
+{\end{enumerate}}
 
 \endinput
